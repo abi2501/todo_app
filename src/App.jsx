@@ -57,7 +57,6 @@ function App() {
         <div className='container w-1/2 mx-auto bg-slate-50 p-5 rounded '>
           <TodoAddForm addTodoItem={addNewTodoItem} />
 
-
           <ul className='h-screen overflow-y-auto'>
             {
               [...todoList].reverse().map((todo, index) => (
