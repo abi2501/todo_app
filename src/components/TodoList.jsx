@@ -1,4 +1,3 @@
-
 import { useState } from "react"
 import React from 'react'
 
@@ -15,13 +14,15 @@ function TodoList({ id, todoText, todoStatus, enableEdit, deleteTodoHander, save
     }
 
     return (
-        <li key={id} className='flex flex-wrap flex-row justify-center my-5 p-2 space-x-1 bg-gray-100 rounded'>
-            <input type='checkbox' className='w-6 p-2 my-2 cursor-pointer' checked={checked} onChange={(e) => todoStatusHandler(e)} />
-            <p className='w-1/3  p-2 my-3  break-words'>{todoText}</p>
-            <div className="min-w-1 sm:min-w-28 p-1 space-x-3">
-                <span className={`p-2 rounded text-blue-700 my-3 ${bgColor}`}>{todoStatusText}</span>
-                <button className='bg-red-400 text-white rounded my-3 p-2' onClick={() => enableEdit(id)}>Edit</button>
-                <button className='bg-gray-400 text-white rounded my-3 p-2' onClick={() => deleteTodoHander(id)}>Delete</button>
+        <li key={id} className='flex flex-wrap flex-row my-3 px-2   bg-gray-100 rounded'>
+            <div className="flex flex-wrap flex-row">
+                <input type='checkbox' className='w-5 p-4 cursor-pointer' checked={checked} onChange={(e) => todoStatusHandler(e)} />
+                <p className='w-80 content-center mx-2 my-4 break-words'>{todoText}</p>
+            </div>
+            <div className="w-5 h-20 p-4 space-x-2 flex flex-wrap flex-col">
+                <span className={`rounded text-blue-700 p-2 ${bgColor}`}>{todoStatusText}</span>
+                <button className='bg-red-400 hover:bg-red-500 p-2 text-white rounded ' onClick={() => enableEdit(id)}>Edit</button>
+                <button className='bg-gray-400 hover:bg-gray-500 p-2 text-white rounded ' onClick={() => deleteTodoHander(id)}>Delete</button>
             </div>
         </li>
     )
